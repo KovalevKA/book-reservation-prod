@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BookRepository extends ElasticsearchRepository<Book, String> {
 
-    List<Book> findAllByName(String name);
+    List<Book> findByNameContainingOrAuthorsContaining(String name, String authors);
 
 }
