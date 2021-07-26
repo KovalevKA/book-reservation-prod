@@ -1,7 +1,6 @@
 package com.asb.example.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.io.Serializable;
 import java.util.List;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
