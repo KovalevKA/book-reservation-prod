@@ -1,20 +1,26 @@
 package com.asb.example.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import lombok.Data;
 
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
+
+@Data
 public class Book {
 
+    public static final String INDEX = "books";
+
+    @JsonIgnore
+    private String id;
+
+    @JsonProperty("isbn")
+    private String isbn;
+    @JsonProperty("name")
     private String name;
+    @JsonProperty("publishHouse")
     private String publishHouse;
+    @JsonProperty("publishYear")
     private int publishYear;
     private String description;
     private List<Author> authors;
