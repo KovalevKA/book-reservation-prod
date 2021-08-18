@@ -5,7 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -13,11 +14,12 @@ import java.util.List;
 @NoArgsConstructor
 public class Book {
 
+    private String isbn;
     private String name;
     private String publishHouse;
     private int publishYear;
     private String description;
-    private List<Author> authors;
-    private List<Genre> genres;
-    private List<Translator> translators;
+    private Set<Author> authors = new HashSet<>();
+    private Set<Genre> genres = new HashSet<>();
+    private Set<Translator> translators = new HashSet<>();
 }
